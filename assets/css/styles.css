@@ -157,7 +157,10 @@ ul { list-style: none; }
 }
 .card__icon svg { width: 30px; height: 30px; }
 /* Custom image icons (service cards) */
-.card__img { width: 66px; height: 66px; object-fit: contain; margin-bottom: 16px; }
+.card__img { width: 96px; height: 96px; object-fit: contain; margin-bottom: 14px; }
+/* Pixar-style illustrations for pain points & about pillars */
+.pain-card__img { width: 104px; height: 104px; object-fit: contain; margin: 0 auto 12px; display: block; }
+.pillar__img { width: 92px; height: 92px; object-fit: contain; margin: 0 auto 14px; display: block; }
 .card h3 { font-size: 1.25rem; margin-bottom: 10px; }
 .card p { color: var(--muted); font-size: 0.98rem; margin-bottom: 14px; }
 .card__link { color: var(--blue); font-weight: 600; font-family: var(--font-head); font-size: 0.92rem; }
@@ -203,7 +206,7 @@ ul { list-style: none; }
 }
 .service-row__icon svg { width: 42px; height: 42px; }
 /* Custom image icons (service rows) */
-.service-row__img { width: 92px; height: 92px; object-fit: contain; }
+.service-row__img { width: 128px; height: 128px; object-fit: contain; }
 .service-row h2 { font-size: 1.7rem; margin-bottom: 12px; }
 .service-row p { color: var(--muted); margin-bottom: 18px; }
 .feature-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 24px; margin-bottom: 22px; }

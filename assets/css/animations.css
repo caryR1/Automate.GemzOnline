@@ -8,11 +8,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: radial-gradient(circle at 20% 30%, rgba(30, 111, 255, 0.14), transparent 45%),
-              radial-gradient(circle at 80% 70%, rgba(30, 111, 255, 0.10), transparent 45%),
-              linear-gradient(135deg, #EEF3FF 0%, #FFFFFF 60%);
-  background-size: 200% 200%;
-  animation: gradientShift 14s ease infinite;
+  background: #FFFFFF;
 }
 
 @keyframes gradientShift {
@@ -26,9 +22,9 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background-image: radial-gradient(rgba(30, 111, 255, 0.35) 1.5px, transparent 1.6px);
+  background-image: radial-gradient(rgba(30, 111, 255, 0.16) 1.5px, transparent 1.6px);
   background-size: 42px 42px;
-  opacity: 0.5;
+  opacity: 0.35;
   animation: dotsDrift 22s linear infinite;
   -webkit-mask-image: radial-gradient(circle at center, #000 30%, transparent 78%);
           mask-image: radial-gradient(circle at center, #000 30%, transparent 78%);
