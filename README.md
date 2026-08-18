@@ -25,7 +25,9 @@ Domain: **Automate.GemzOnline.Com**
     ├── js/
     │   └── main.js          # Nav toggle, FAQ, scroll reveal
     └── images/
-        └── logo.png         # Horizontal brand logo
+        ├── logo.png         # Dark-background logo (used as favicon)
+        ├── logo-light.png   # Light-theme logo (used in nav + footer)
+        └── icons/           # Custom service icons (website, social, email, receptionist, voice, reputation)
 ```
 
 ---
@@ -95,11 +97,14 @@ On `contact.html` there is a Calendly section with a button link. To embed the f
 
 | Element | Value |
 |---------|-------|
-| Deep Navy (background) | `#0A0F2C` |
-| Section Alt background | `#0D1535` |
+| White (background) | `#FFFFFF` |
+| Section Alt background (light grey) | `#F4F6FA` |
 | Electric Blue (accent) | `#1E6FFF` |
-| White (text) | `#FFFFFF` |
-| Ice Blue (secondary) | `#E8F0FF` |
+| Primary text (charcoal) | `#1A2233` |
+| Heading ink (navy) | `#0A0F2C` |
+| Muted grey text | `#5B6676` |
+| Border grey | `#E3E8F0` |
+| Ice blue (icon tiles) | `#EAF1FF` |
 | Headings font | Poppins |
 | Body font | Inter |
 
