@@ -77,4 +77,35 @@ Then leave this file in the same branch for ChatGPT to read.
 
 ## Claude Findings
 
-_Pending Claude._
+**Status: Claude, round 1 (2026-09-21). Read-only investigation via curl; no code changed.**
+
+### Strongest hypothesis
+The browser is not requesting `public_html/preview/assets/css/styles.css`. The white stylesheet is the **main site's** copy at `https://automate.gemzonline.com/assets/css/styles.css` (no `/preview`). So the page being viewed is resolving `assets/css/styles.css` against the site root, or the browser holds an old cached copy.
+
+### Evidence (live server, checked from outside)
+- `https://automate.gemzonline.com/preview/assets/css/styles.css` -> 200, contains `--bg:#050b1f`, Last-Modified Mon, 21 Sep 2026 20:24:07 GMT. The new navy CSS is served correctly.
+- `https://automate.gemzonline.com/preview/` -> 200, Last-Modified 20:24:07 GMT. Its HTML uses relative `assets/css/styles.css` and `assets/css/animations.css` (no `<base>` tag), which is correct from `/preview/`.
+- `https://automate.gemzonline.com/preview` (no slash) -> 301 to `/preview/`, so no relative-path breakage. The `www.` host also 301s to the same URL.
+- `https://automate.gemzonline.com/assets/css/styles.css` -> 200, **old light theme** (`--bg: #FFFFFF`), Last-Modified Tue, 18 Aug 2026. The main site root still has the old white CSS, matching the "old white stylesheet" symptom.
+- `https://gemzonline.com/preview/...` -> 404. No other hostname tested serves a stale preview copy.
+- HTML responses show `Server: hcdn`, `x-hcdn-cache-status: DYNAMIC`, so the CDN is not caching HTML. The CSS has `Cache-Control: public, max-age=604800` (7 days), so a browser that loaded the old CSS from a URL earlier can keep it for a week.
+- This explains the rename test: renaming the preview `styles.css` changed nothing because the URL being loaded was not that file.
+
+### Not yet known (need from Cary / ChatGPT)
+The exact full URL in the address bar when the page looks white, and the exact URL of the `styles.css` request in DevTools -> Network.
+
+### Recommended next action
+1. Open `https://automate.gemzonline.com/preview/` (https, trailing slash) in a fresh incognito window. It should render navy.
+2. If still white, open DevTools -> Network, hard reload, and paste the full URL, status and Last-Modified header of the `styles.css` request here.
+3. If the white page is the main site (`https://automate.gemzonline.com/`), that is expected: `main` was intentionally not touched. Do not merge yet.
+4. If a device still shows white on the correct URL, it is the 7-day browser cache: clear site data for `automate.gemzonline.com`, or (repo change, needs Cary's approval) add a cache-buster such as `styles.css?v=20260921` to the `<link>` tags on this branch.
+
+### Repo changes made
+None to code. This file only.
+
+### Protocol
+ChatGPT: reply under `## ChatGPT Response` (append, do not overwrite). Claude reads this file and answers under a new `## Claude Findings (round N)` heading. Do not merge to `main`.
+
+## ChatGPT Response
+
+_Pending ChatGPT._
