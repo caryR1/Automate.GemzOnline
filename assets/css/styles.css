@@ -33,3 +33,13 @@
 
 /* Graphic hero visual */
 .hero__graphic{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 22px 55px rgba(13,42,77,.16)}
+
+/* Approved full hero artwork with functional CTA hotspots */
+.hero--artwork{padding:0;background:#06162d}
+.hero-artwork{position:relative;width:100%;max-width:1536px;margin:0 auto;line-height:0}
+.hero-artwork img{display:block;width:100%;height:auto}
+.hero-hotspot{position:absolute;display:block;z-index:5;border-radius:18px}
+.hero-hotspot:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hero-hotspot--start{left:3.95%;top:51.55%;width:16.75%;height:7.1%}
+.hero-hotspot--demo{left:21.9%;top:51.55%;width:16.55%;height:7.1%}
+@media(max-width:768px){.hero-artwork{min-width:0}.hero-hotspot{border-radius:10px}}
