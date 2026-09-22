@@ -56,3 +56,9 @@
 .nav__links a:not(.nav__cta):hover{color:#0878f9}
 .nav__links a:not(.nav__cta).active{color:#071b3b}
 .nav__cta{background:#0878f9;color:#fff!important}
+
+/* Final header + hero alignment: hide the header baked into the hero artwork */
+.hero--artwork{overflow:hidden;background:#06162d}
+.hero-artwork{margin-top:-6.1%;max-width:1536px}
+.nav__logo img{height:42px;width:auto}
+@media(max-width:768px){.hero-artwork{margin-top:-6.1%}.nav__logo img{height:38px}}
