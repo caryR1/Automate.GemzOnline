@@ -43,3 +43,9 @@
 .hero-hotspot--start{left:3.95%;top:51.55%;width:16.75%;height:7.1%}
 .hero-hotspot--demo{left:21.9%;top:51.55%;width:16.55%;height:7.1%}
 @media(max-width:768px){.hero-artwork{min-width:0}.hero-hotspot{border-radius:10px}}
+
+/* White site header to complement dark hero */
+.nav{background:#fff;border-bottom:1px solid #e8edf4}
+.nav__links a{color:#071b3b}
+.nav__links a:not(.nav__cta):hover{color:var(--blue)}
+.nav__toggle span{background:#071b3b}
