@@ -65,3 +65,7 @@
 
 /* Prevent the post-hero benefits from covering the following section heading */
 .benefits{position:relative;z-index:1;margin-bottom:32px}
+
+/* Keep post-hero benefits in normal flow and clear of the next section */
+.benefits{position:static;z-index:auto;margin:0;padding:40px 0 64px;background:#fff}
+#how{position:relative;z-index:0;clear:both;padding-top:88px}
