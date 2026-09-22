@@ -49,3 +49,10 @@
 .nav__links a{color:#071b3b}
 .nav__links a:not(.nav__cta):hover{color:var(--blue)}
 .nav__toggle span{background:#071b3b}
+
+/* Refine white header to match approved reference */
+.nav{background:#fbfcfe;border-bottom:1px solid #e5ebf3;box-shadow:0 1px 0 rgba(7,27,59,.03)}
+.nav__links a{color:#071b3b}
+.nav__links a:not(.nav__cta):hover{color:#0878f9}
+.nav__links a:not(.nav__cta).active{color:#071b3b}
+.nav__cta{background:#0878f9;color:#fff!important}
