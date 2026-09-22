@@ -77,3 +77,6 @@
 .hero-hotspot--start{top:51.9%;height:8.7%}
 .hero-hotspot--demo{top:51.9%;height:8.7%}
 @media(max-width:768px){.hero-artwork{margin:0 auto;aspect-ratio:1536/836}}
+
+/* Real section heading restored below hero */
+.benefits__title{text-align:center;margin:0 0 42px}
