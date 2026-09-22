@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 92" role="img" aria-labelledby="t d">
+<title id="t">Automate</title><desc id="d">Automate, a Gems Online company</desc>
+<defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#0878f9"/><stop offset="1" stop-color="#42a5ff"/></linearGradient></defs>
+<path fill="url(#g)" d="M18 68 48 12h24l30 56H79l-6-12H47l-6 12H18Zm38-31-7 14h21l-7-14-3-7-4 7Z"/>
+<path fill="#fff" d="M119 24h18l24 44h-16l-4-9h-27l-4 9H95l24-44Zm.4 24h16.2l-8.1-17-8.1 17ZM167 24h15l14 25 14-25h15v44h-14V45l-11 20h-8l-11-20v23h-14V24Zm67 22c0-14 11-23 27-23s27 9 27 23-11 23-27 23-27-9-27-23Zm39 0c0-7-5-12-12-12s-12 5-12 12 5 12 12 12 12-5 12-12Zm20-22h43v11h-14v33h-15V35h-14V24Zm49 0h39v10h-24v7h22v10h-22v7h25v10h-40V24Zm47 0h20c18 0 29 8 29 22s-11 22-29 22h-20V24Zm15 11v22h6c8 0 13-4 13-11s-5-11-13-11h-6Z"/>
+<text x="118" y="84" fill="#b9c8dc" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" letter-spacing="2.4">A GEMS ONLINE COMPANY</text>
+</svg>
