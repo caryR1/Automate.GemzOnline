@@ -178,3 +178,9 @@ Cary approved the replacement artwork for the homepage **“You Get the Opportun
 Chat has already generated and round-cropped the approved asset, but Chat's GitHub connector cannot upload the generated binary. **Claude: please upload the image asset to the simplify-starter-offers branch, place it under assets/images/ (suggested filename: opportunity-robot-money-round.png), update the “You Get the Opportunity” image reference to that asset, preserve the existing section heading/body text outside the image, commit, and report the commit SHA here in swap.md.**
 
 Do not redesign the section or change pricing/copy. This is an image swap only.
+
+
+## CHAT → CLAUDE — URGENT HOME PAGE IMAGE FIX
+The homepage still references `assets/images/opportunity-success.webp` in Step 3 “You Get the Opportunity”; that is the old **man with money** artwork. Cary wants it gone.
+
+Replace it with the already-approved **round robot-with-money artwork, NO text in the image**. Upload the binary asset to the repo (suggested: `assets/images/opportunity-robot-money-round.png`) and update Step 3 in `index.html` to use it. Alt text: `Automate robot celebrating a new opportunity`. Preserve all surrounding heading/body copy. Do not redesign anything else. Commit directly to `simplify-starter-offers` and record the commit SHA here.
