@@ -80,3 +80,15 @@
 
 /* Real section heading restored below hero */
 .benefits__title{text-align:center;margin:0 0 42px}
+
+
+/* Mobile navigation hard fix */
+@media (max-width:768px){
+  .nav{position:relative;z-index:1000}
+  .nav__inner{position:relative}
+  .nav__toggle{display:flex!important;position:relative;z-index:1002;cursor:pointer;padding:10px;margin-left:auto}
+  .nav__links{display:flex!important;position:absolute!important;top:70px!important;left:0!important;right:0!important;z-index:1001!important;flex-direction:column!important;background:#fff!important;box-shadow:0 14px 28px rgba(7,27,59,.16);max-height:0!important;opacity:0;visibility:hidden;overflow:hidden;transition:max-height .25s ease,opacity .2s ease}
+  .nav__links.open{max-height:440px!important;opacity:1;visibility:visible}
+  .nav__links a{display:block!important;color:#071b3b!important;padding:15px 24px!important;border-bottom:1px solid #e8edf4!important}
+  .nav__links .nav__cta{display:block!important;margin:14px 24px!important;width:calc(100% - 48px)!important;color:#fff!important;text-align:center}
+}
