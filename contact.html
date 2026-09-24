@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260922-uniform1" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260924-pricingcontact1" />
   <link rel="stylesheet" href="assets/css/animations.css?v=20260921-dark2" />
   <link rel="icon" href="assets/images/logo.png" />
 </head>
@@ -26,8 +26,8 @@
     <div class="page-hero__bg"></div>
     <div class="hero__dots"></div>
     <div class="container page-hero__content">
-      <h1>Let's Talk</h1>
-      <p>Tell us about your business and we'll show you exactly how AI automation can help you grow. Reply within one business day, guaranteed.</p>
+      <p class="eyebrow">LET'S BUILD YOUR AUTOMATION</p><h1>Turn More Enquiries Into Customers</h1>
+      <p>Tell us where leads are slipping through. We'll help you choose the simplest automation to respond faster, capture the opportunity and follow up consistently.</p>
     </div>
   </section>
 
@@ -38,7 +38,7 @@
 
         <!-- LEFT: contact info -->
         <div class="contact-info reveal">
-          <h2>Get in Touch</h2>
+          <div class="contact-robot"><img src="assets/images/icons/receptionist.png" alt="Automate assistant"></div><h2>Let’s Get You Set Up</h2><p class="contact-intro">Choose a starter plan or tell us what is happening in your business. We’ll help you identify the right next step.</p>
           <div class="contact-item">
             <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
             <div>
@@ -99,17 +99,15 @@
             <div class="form-group">
               <label for="service">Service Interested In</label>
               <select id="service" name="service">
-                <option value="Website Creation & Updates">Website Creation &amp; Updates</option>
-                <option value="AI Social Media Automation">AI Social Media Automation</option>
-                <option value="AI Email Automation">AI Email Automation</option>
-                <option value="Digital Receptionist">Digital Receptionist</option>
-                <option value="AI Voice Calls">AI Voice Calls</option>
-                <option value="Google Reputation Management">Google Reputation Management</option>
+                <option value="Leads & Reviews">Leads &amp; Reviews — $99/mo</option>
+                <option value="AI Attendant">AI Attendant — $200/mo</option>
+                <option value="Complete">Complete — $249/mo</option>
+                <option value="Not sure">Not sure — help me choose</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="Tell us a little about your business and what you'd like to automate..."></textarea>
+              <label for="message">What would you like to improve?</label>
+              <textarea id="message" name="message" required placeholder="Tell us where leads, calls or reviews are slipping through..."></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--lg" style="width:100%; justify-content:center;">Send Message</button>
           </form>
