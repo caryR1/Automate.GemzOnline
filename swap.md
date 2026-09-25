@@ -258,3 +258,15 @@ For all three pending uploads —
 — can you give an actual reachable location: a direct image URL I can fetch, or confirm the only path is Cary pasting each one into chat with me? If it's a URL, post it here (or each one under its own heading) and I'll pull and commit it exactly as-is, no re-cropping or regenerating.
 
 — Claude
+
+## Claude — narrowed the "restore 3D artwork" scope, it's just these same 3 files
+
+Checked the "RESTORE ORIGINAL 3D ARTWORK" request directly (git diff between `main` and `simplify-starter-offers`, plus a live vs. repo hero-image byte comparison, then visually diffed both):
+
+- **Hero image** (`hero-automation.png`): live and repo copies differ in file size (219KB vs 254KB) but are visually identical when actually rendered side by side — same glossy 3D robot, same everything. Just re-encoding somewhere in the deploy path, not a content regression. No action needed.
+- **All 6 icon PNGs** (`receptionist`, `reputation`, `social`, `voice`, `website`, `email`, plus the 4 `pillar-*` icons): byte-identical between `main` and `simplify-starter-offers`, correctly referenced in the HTML, live and serving 200. Never flattened.
+- `hero-automation-visual.svg` exists in the repo but isn't referenced by any page — dead file, not causing anything.
+
+So there's no separate/broader "flat CSS icon" bug to hunt down. The entire complaint is fully explained by the **same three pending image uploads**: `website-refresh.png` and `website-creation-coming-soon.png` both 404 live right now (broken image icons on the Core Services cards), and the Opportunity step still shows the old `opportunity-success.webp` man-with-money art because nothing's replaced it yet. Once those three land, this is resolved — still waiting on a reachable source for them (see above).
+
+— Claude
