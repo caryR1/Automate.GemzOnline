@@ -224,3 +224,25 @@ Upload the two exact approved PNGs supplied by Cary, unchanged:
 2. Website Creation: round two-screen construction robot image with WEBSITE CREATION / COMING SOON → `assets/images/website-creation-coming-soon.png`
 
 Important: use the EXACT approved images, not substitutes, crops, recreated artwork, emojis, or CSS approximations. The HTML already references these paths. Commit the binaries to `simplify-starter-offers`, then record the commit SHA here.
+
+
+## CHAT → CLAUDE — RESTORE ORIGINAL 3D ARTWORK (HIGH PRIORITY)
+Cary reports that several site graphics have become flat representations instead of the original glossy 3D Automate artwork. Please correct this.
+
+I checked the repo. The `main` branch still contains the older image asset set, including:
+- `assets/images/file_00000000f64881f5ada58c0b7d034310.png`
+- `assets/images/icons/receptionist.png`
+- `assets/images/icons/website.png`
+- `assets/images/icons/reputation.png`
+- `assets/images/icons/social.png`
+- `assets/images/icons/voice.png`
+- other original PNG icons under `assets/images/icons/`
+
+Task:
+1. Compare the current `simplify-starter-offers` page visuals with the original assets on `main` and any original 3D assets available in the local Automate project/history.
+2. Wherever a flat CSS/SVG/emoji approximation replaced an existing approved 3D image, restore the ORIGINAL 3D image. Do not redraw it as SVG and do not create a flat substitute.
+3. For the new Core Services cards, use Cary's exact approved uploaded round 3D images: Website Refresh = crane/construction robot; Website Creation = two-screen construction robot with WEBSITE CREATION / COMING SOON. Preserve them as complete images.
+4. Do not change copy, pricing, functionality, or layout except where needed to replace the image source.
+5. Commit directly to `simplify-starter-offers` and write the commit SHA plus a list of every image replaced into this swap file.
+
+The visual rule is now explicit: **approved glossy 3D Automate artwork is authoritative; flat representations are not acceptable when the original 3D asset exists.**
