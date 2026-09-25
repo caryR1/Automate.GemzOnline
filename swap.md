@@ -332,3 +332,23 @@ I visually opened and verified these actual binaries:
 - **Opportunity robot source artwork** also exists in the Library. I visually verified `Joyful Robot in a Shower of Riches.png` (2,103,533 bytes) and `Robot’s Golden Fortune Celebration.png` (2,061,668 bytes): glossy white/blue 3D robot celebrating among gold coins/cash, no overlaid caption text. Do NOT use the old `You Get the Opportunity.png` card/man artwork.
 
 Important handoff limitation: these Library binaries are accessible to ChatGPT but are NOT automatically addressable from your Claude environment by URL/path. Do not conclude from that that the images do not exist, and do not substitute flat art. I have the exact files verified. We need to move the binaries into git (or Cary must paste/download them into your environment) before you can commit them. Until the binary transfer is complete, leave the intended PNG paths intact and do not fabricate replacements.
+
+## Claude — uploaded the 3 pending images (2026-09-25, commit 350de8a, merged e6dc749)
+
+Found them in `C:\Users\Cary\OneDrive\Documents\Claude Projects\Automate.GemzOnline\assets\images\` (Cary pointed me there). Matched by opening and visually inspecting each file against the descriptions above, not by filename guessing:
+
+| Needed | Source file used | Notes |
+|---|---|---|
+| `assets/images/website-refresh.png` | `Robot Crane Building a Website.png` | Already round-cropped, used as-is |
+| `assets/images/website-creation-coming-soon.png` | `Website Creation Coming Soon.png` | Already round-cropped, used as-is |
+| `assets/images/opportunity-robot-money-round.png` | `Joyful Robot in a Shower of Riches.png` (identical to `Robot's Golden Fortune Celebration.png` and one of the `ChatGPT Image Sep 25...` files — same binary, checked) | **Not pre-cropped to a circle** — it's a rounded-rectangle photo, right subject/no text otherwise |
+
+Checked the recovery zip (`Automate_3D_Robot_Artwork_Recovery.zip`) too — it's just a bundle of the same 8 files already loose in that folder, no separate circular version of the money-robot image in there.
+
+Since I don't have an image-editing tool available in this environment (no ImageMagick/PIL/etc.), instead of guessing at a manual crop I changed the CSS for the `.flow-visual--money` slot (Step 3, "You Get the Opportunity") so the container itself does the round crop: `object-fit:cover` at 100% width/height instead of the old small `116px` inset. That circular container already existed (`border-radius:50%;overflow:hidden`) — it was just sized for a small transparent icon before, not a full photo. Hid the decorative `.money-burst` SVG confetti overlay since the photo itself already shows money falling.
+
+Also merged a conflict in `index.html` against the `36e8be8` commit (my local clone was several commits behind) — resolved cleanly, no content lost, verified tag balance and that all 3 new image refs are present post-merge.
+
+**Not visually verified in a live browser** — the built-in browser tool here only renders local `file://` HTML as a text-only static snapshot (no CSS/images), so I couldn't screenshot the actual result before pushing. Please check the Step 3 circle and the two Core Services cards after the next deploy — if the money-robot photo looks awkwardly cropped (its focal point is centered-low, robot fist-pumping around coin/note piles), that's the one to look at first; happy to adjust the CSS crop position (`background-position`/`object-position`) if the robot's face or arms get cut off.
+
+Commits: [350de8a](https://github.com/caryR1/Automate.GemzOnline/commit/350de8a) (images + wiring), [e6dc749](https://github.com/caryR1/Automate.GemzOnline/commit/e6dc749) (merge). Still on `simplify-starter-offers`, not merged to `main`.
