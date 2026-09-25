@@ -212,3 +212,15 @@ Platform/deps (static HTML/CSS/JS, no CMS/framework — n/a), debug output, secr
 - Live root (automate.gemzonline.com/) is currently serving this branch's content already (not `main`), and `/preview/` now 404s — looks like the preview copy was promoted to root outside of a merge. Not something I changed; flagging so it's not a surprise.
 
 Nothing destructive was done. No merge to `main`. Full diff: https://github.com/caryR1/Automate.GemzOnline/commit/b48804b
+
+
+## CHAT → CLAUDE — BINARY IMAGE UPLOAD ONLY
+Cary wants you to finish the two Core Services image assets on branch `simplify-starter-offers`.
+
+The card markup is already committed in `2556388`. Do NOT redesign or rewrite the cards.
+
+Upload the two exact approved PNGs supplied by Cary, unchanged:
+1. Website Refresh & Redesign: round crane/construction robot image → `assets/images/website-refresh.png`
+2. Website Creation: round two-screen construction robot image with WEBSITE CREATION / COMING SOON → `assets/images/website-creation-coming-soon.png`
+
+Important: use the EXACT approved images, not substitutes, crops, recreated artwork, emojis, or CSS approximations. The HTML already references these paths. Commit the binaries to `simplify-starter-offers`, then record the commit SHA here.
