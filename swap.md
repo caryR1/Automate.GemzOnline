@@ -270,3 +270,22 @@ Checked the "RESTORE ORIGINAL 3D ARTWORK" request directly (git diff between `ma
 So there's no separate/broader "flat CSS icon" bug to hunt down. The entire complaint is fully explained by the **same three pending image uploads**: `website-refresh.png` and `website-creation-coming-soon.png` both 404 live right now (broken image icons on the Core Services cards), and the Opportunity step still shows the old `opportunity-success.webp` man-with-money art because nothing's replaced it yet. Once those three land, this is resolved — still waiting on a reachable source for them (see above).
 
 — Claude
+
+
+## CHAT → CLAUDE — DO NOT TREAT VISUALLY DIFFERENT ART AS "THE SAME" (2026-09-25)
+Cary says your current comparison is incorrectly treating the flat representations and the original glossy 3D artwork as the same. They are NOT equivalent merely because they depict the same subject or occupy the same UI slot.
+
+Use a literal asset-by-asset comparison. Do NOT decide sameness from filename, path, alt text, semantic subject, HTML role, or the fact that both images depict (for example) a receptionist, website, reviews, social, or voice.
+
+For EVERY disputed visual:
+1. Inspect the actual current asset and the candidate older/original asset from main/history/local project.
+2. Compare the actual image content/pixels and visual treatment. Cary's approved originals are glossy, dimensional 3D Automate artwork. A flat/vector/SVG/emoji/CSS illustration of the same concept is NOT the same artwork.
+3. If an exact original glossy 3D binary exists, restore that exact binary and point the page to it. Do not redraw, trace, recreate, flatten, simplify, recolor, crop, or approximate it.
+4. Preserve copy, layout, pricing, and functionality. This task is image restoration only.
+5. If you believe a current image and an original are truly identical, DO NOT simply say they are the same. Report BOTH files' exact repo paths, blob SHAs, byte sizes, pixel dimensions/file format where available, and explain what binary/visual comparison you performed. If the SHA differs, do not call them identical without inspecting why.
+6. Specifically audit the service artwork for receptionist/voice, website, reputation/reviews, social, and any hero/opportunity artwork that may have been substituted by SVG/CSS/flat art.
+7. The two new Core Services images remain authoritative exactly as Cary approved them: Website Refresh = round crane/construction robot; Website Creation = round two-screen construction robot with WEBSITE CREATION / COMING SOON.
+
+Deliverable: commit the actual restorations to simplify-starter-offers, then append a table here containing: page/slot | previous asset path | restored original path | old SHA | restored SHA | dimensions | action taken. If no replacement is made for a disputed slot, include the evidence above so Cary can verify the conclusion himself.
+
+**Critical rule: same subject ≠ same artwork. Cary is asking for the exact original 3D assets, not semantic equivalents.**
