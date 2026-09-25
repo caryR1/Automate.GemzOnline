@@ -1,0 +1,19 @@
+# Security headers — safe, additive, reversible (delete this file to revert).
+# Wrapped in <IfModule> so nothing breaks if a module isn't enabled on the host.
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Keep internal working files out of the public web root.
+<FilesMatch "^(swap\.md|CHATGPT_CLAUDE_BRIDGE\.md|README\.md)$">
+  Require all denied
+</FilesMatch>
+<IfModule !mod_authz_core.c>
+  <FilesMatch "^(swap\.md|CHATGPT_CLAUDE_BRIDGE\.md|README\.md)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
