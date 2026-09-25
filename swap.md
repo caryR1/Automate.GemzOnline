@@ -184,3 +184,31 @@ Do not redesign the section or change pricing/copy. This is an image swap only.
 The homepage still references `assets/images/opportunity-success.webp` in Step 3 “You Get the Opportunity”; that is the old **man with money** artwork. Cary wants it gone.
 
 Replace it with the already-approved **round robot-with-money artwork, NO text in the image**. Upload the binary asset to the repo (suggested: `assets/images/opportunity-robot-money-round.png`) and update Step 3 in `index.html` to use it. Alt text: `Automate robot celebrating a new opportunity`. Preserve all surrounding heading/body copy. Do not redesign anything else. Commit directly to `simplify-starter-offers` and record the commit SHA here.
+
+## Claude Findings — Security + SEO audit (2026-09-25, commit b48804b)
+
+Requested via a peer session relaying "Cary's ask, across every site/session at once." Confirmed with Cary directly before acting. Scope: this repo, branch `simplify-starter-offers` (open PR #1 to `main`), plus the live site at automate.gemzonline.com.
+
+### Checked
+Platform/deps (static HTML/CSS/JS, no CMS/framework — n/a), debug output, secrets/keys in repo, weak-credential/auth-on-admin-endpoint (n/a, no backend), SQLi/XSS in custom JS, CSRF on the contact form, exposed .env/config/backup files on the live host, security response headers, stray files in the public path, robots.txt/sitemap.xml, per-page meta title/description, Open Graph tags, canonical URLs, broken links/images.
+
+### Found & fixed (pushed to this branch, commit b48804b)
+- **swap.md and README.md were publicly reachable** at the site root (200, not 404) — internal working notes and deploy docs exposed on the live web server. Fixed: `.htaccess` now denies direct requests to `swap.md`, `README.md` and `CHATGPT_CLAUDE_BRIDGE.md`.
+- **No security response headers** beyond a platform-level CSP (`upgrade-insecure-requests`, added by Hostinger's CDN, not us). Added `.htaccess` with X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy.
+- **No robots.txt / sitemap.xml.** Added both; sitemap lists the four real pages, robots.txt disallows the pricing.html redirect stub.
+- **No canonical or Open Graph/Twitter tags on any page.** Added to index, about, contact, services. Fixed pricing.html's canonical (was a relative URL with a fragment) to an absolute URL, and marked it noindex,follow since it's a client-side redirect, not a real page.
+
+### Checked, nothing wrong found
+- No secrets/API keys/tokens in the repo — grepped for common key patterns, only hit was the intentional `YOUR_WEB3FORMS_KEY` placeholder.
+- No `eval`, `document.write`, or unguarded `innerHTML` assignment in main.js — no obvious XSS vector in custom JS.
+- Contact form has a honeypot field (`botcheck`); it posts to a third-party API (Web3Forms) with no session/cookie state of ours to protect, so classic same-site CSRF tokens don't apply here.
+- `.env`, `.git/config`, `.htaccess` all return 403 on the live host (server-level protection, not from anything in this repo).
+- No broken internal links or missing images — cross-checked every `src`/`href` in all five pages against the actual asset files.
+
+### Flagged, not touched — needs Cary's decision
+- **Web3Forms access_key is still the README placeholder** (`YOUR_WEB3FORMS_KEY`) — the contact form will not deliver submissions anywhere until a real key is set.
+- **`YOUR_GHL_LEAD_REVIEW_LINK` / `YOUR_GHL_AI_ATTENDANT_LINK` / `YOUR_GHL_COMPLETE_LINK`** checkout links on the pricing cards are still placeholders — already noted as intentional in this file's earlier round, pending real GoHighLevel URLs.
+- **New `.htaccess` is untested on this specific Hostinger account.** It's additive and reversible (delete the file to revert), but given the earlier domain-mapping confusion on this host, please confirm the site still loads normally after the next deploy.
+- Live root (automate.gemzonline.com/) is currently serving this branch's content already (not `main`), and `/preview/` now 404s — looks like the preview copy was promoted to root outside of a merge. Not something I changed; flagging so it's not a surprise.
+
+Nothing destructive was done. No merge to `main`. Full diff: https://github.com/caryR1/Automate.GemzOnline/commit/b48804b
