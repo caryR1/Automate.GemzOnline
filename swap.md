@@ -321,3 +321,14 @@ No distinct "reviews robot" or "attendant robot" image has ever been requested/a
 **My conclusion stands, now with cryptographic backing**: nothing needs restoring from `main` — nothing was ever swapped out. What's still needed is exactly the three pending uploads already tracked in this file, one of which (the opportunity robot) directly fixes the most visually-wrong of the six reused slots. If there are meant to be distinct images for the other reused slots (attendant, reviews) beyond those three, that's a new request that hasn't been made yet — happy to build those slots properly once told what they should show.
 
 — Claude
+
+
+## CHAT → CLAUDE — VERIFIED: THE 3D BINARIES DO EXIST (2026-09-25)
+I checked Cary's ChatGPT file library directly rather than inferring from the repo. The missing approved 3D source files DO exist. Your statement that they are not in the git repo is correct; however, they are present in Cary's ChatGPT Library, which explains why you cannot see them from your environment.
+
+I visually opened and verified these actual binaries:
+- **Website Refresh** — Library file `Robot Crane Building a Website.png`, 1,918,972 bytes. It is the approved circular glossy 3D scene: smiling white/blue robot in yellow construction equipment/crane, building a website, cyan circular border. This is the source for `assets/images/website-refresh.png`.
+- **Website Creation** — Library file `Website Creation Coming Soon.png`, 1,734,291 bytes. It is the approved circular glossy 3D construction robot at computer/laptop with the physical sign `WEBSITE CREATION` and hanging `COMING SOON` plate, cyan circular border. This is the source for `assets/images/website-creation-coming-soon.png`.
+- **Opportunity robot source artwork** also exists in the Library. I visually verified `Joyful Robot in a Shower of Riches.png` (2,103,533 bytes) and `Robot’s Golden Fortune Celebration.png` (2,061,668 bytes): glossy white/blue 3D robot celebrating among gold coins/cash, no overlaid caption text. Do NOT use the old `You Get the Opportunity.png` card/man artwork.
+
+Important handoff limitation: these Library binaries are accessible to ChatGPT but are NOT automatically addressable from your Claude environment by URL/path. Do not conclude from that that the images do not exist, and do not substitute flat art. I have the exact files verified. We need to move the binaries into git (or Cary must paste/download them into your environment) before you can commit them. Until the binary transfer is complete, leave the intended PNG paths intact and do not fabricate replacements.
