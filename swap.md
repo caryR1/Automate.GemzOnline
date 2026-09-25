@@ -289,3 +289,35 @@ For EVERY disputed visual:
 Deliverable: commit the actual restorations to simplify-starter-offers, then append a table here containing: page/slot | previous asset path | restored original path | old SHA | restored SHA | dimensions | action taken. If no replacement is made for a disputed slot, include the evidence above so Cary can verify the conclusion himself.
 
 **Critical rule: same subject ≠ same artwork. Cary is asking for the exact original 3D assets, not semantic equivalents.**
+
+## Claude — exact git-blob-SHA comparison (not filename/path/alt-text this time)
+
+Understood — re-did this the rigorous way you asked for: `git rev-parse <branch>:<path>` gives the exact SHA-1 of the file content itself (git's own content-addressing), which is cryptographic proof of byte-identity, not an inference from filename or subject. A SHA match here is not "looks the same" — it is the literal same file object.
+
+| Slot / where it's used | Asset path | `main` blob SHA | `simplify-starter-offers` blob SHA | Dimensions | Verdict |
+|---|---|---|---|---|---|
+| Hero (index/about/contact/services) | `main:assets/images/file_00000000f64881f5ada58c0b7d034310.png` vs `branch:assets/images/hero-automation.png` | `fab5ff04c3...` | `fab5ff04c3...` (**same SHA**) | 1536×1024 JPEG | **Identical file, renamed.** Not re-drawn, not flattened. |
+| Receptionist icon (services.html, and reused on index.html — see below) | `assets/images/icons/receptionist.png` | `4546563b30...` | `4546563b30...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Reputation/reviews icon (services.html) | `assets/images/icons/reputation.png` | `b0a05730fe...` | `b0a05730fe...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Social icon (services.html) | `assets/images/icons/social.png` | `07d419fcc4...` | `07d419fcc4...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Voice icon (services.html) | `assets/images/icons/voice.png` | `bdada7dc6d...` | `bdada7dc6d...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Website icon (services.html) | `assets/images/icons/website.png` | `a34aaf8c3c...` | `a34aaf8c3c...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Email icon (services.html) | `assets/images/icons/email.png` | `38fdc6382b...` | `38fdc6382b...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+
+**None of the original glossy 3D artwork has been replaced, redrawn, or flattened anywhere in this repo.** Every one of these is the exact same git object on both branches.
+
+### What I think is actually producing the "flat/wrong" impression — a real finding, distinct from asset replacement
+
+`services.html` uses each icon exactly once, correctly matched to its own concept (this page is unchanged in spirit from `main`). But the **new** `index.html` narrative redesign reuses `icons/receptionist.png` **six separate times** for six different story beats, with alt text implying they should be different artwork:
+- "AI receptionist"
+- "Automate AI attendant robot"
+- "Automate robot celebrating a new opportunity" ← this one should be the approved money-robot, not the plain receptionist
+- "Leads and reviews robot" ← implies a reviews-specific scene, showing the plain receptionist instead
+- "AI attendant robot"
+- "AI attendant and reviews"
+
+No distinct "reviews robot" or "attendant robot" image has ever been requested/approved anywhere in this file — only the three already-tracked uploads (`opportunity-robot-money-round.png`, `website-refresh.png`, `website-creation-coming-soon.png`) exist as named, approved, pending assets. So I can't restore a fourth image that was never supplied. But the repeated single-image reuse across six semantically-different slots is very likely why the page reads as generic/flat even though the underlying file is genuine 3D art — the same robot photo doesn't visually represent "reviews" or "celebrating a payout," it just represents a receptionist, six times.
+
+**My conclusion stands, now with cryptographic backing**: nothing needs restoring from `main` — nothing was ever swapped out. What's still needed is exactly the three pending uploads already tracked in this file, one of which (the opportunity robot) directly fixes the most visually-wrong of the six reused slots. If there are meant to be distinct images for the other reused slots (attendant, reviews) beyond those three, that's a new request that hasn't been made yet — happy to build those slots properly once told what they should show.
+
+— Claude
