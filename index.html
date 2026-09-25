@@ -15,6 +15,29 @@
 .website-refresh{background:linear-gradient(135deg,#eef8ff 0%,#fff 55%,#fff8e8 100%)}.website-refresh__card{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(320px,1.1fr);gap:48px;align-items:center;padding:44px;border:1px solid #dbe9f5;border-radius:28px;background:#fff;box-shadow:0 20px 55px rgba(13,42,77,.11)}.website-refresh__copy{text-align:left}.website-refresh__copy .section-title{text-align:left;margin-bottom:16px}.website-refresh__copy ul{margin:20px 0 22px;padding-left:22px}.website-refresh__copy li{margin:8px 0}.website-build-art{width:min(100%,390px);aspect-ratio:1;border-radius:50%;margin:auto;position:relative;overflow:hidden;background:linear-gradient(#159cff 0 48%,#e8c17c 48% 100%);border:8px solid #12b9ed;box-shadow:0 16px 38px rgba(8,120,249,.22)}.website-build-art img{position:absolute;width:47%;left:9%;bottom:10%;z-index:3}.build-crane{position:absolute;font-size:8rem;right:1%;top:7%;z-index:2;transform:rotate(-3deg)}.build-screen{position:absolute;right:11%;bottom:16%;width:37%;height:31%;display:grid;place-items:center;background:#fff;border:8px solid #263c59;border-radius:10px;color:#168cf0;font-size:4rem;box-shadow:0 8px 15px rgba(0,0,0,.16)}@media(max-width:800px){.website-refresh__card{grid-template-columns:1fr;padding:28px 22px;gap:28px}.website-refresh__copy .section-title{font-size:1.8rem}.build-crane{font-size:6rem}}
 </style><style>
 .web-service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin-top:38px}.web-service-card{overflow:hidden;border:1px solid #dbe9f5;border-radius:28px;background:#fff;box-shadow:0 18px 46px rgba(13,42,77,.1)}.web-service-card__image{display:block;width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;padding:18px}.web-service-card__body{padding:4px 30px 32px}.web-service-card__body h3{font-size:1.65rem;margin:12px 0}.web-service-card__body ul{padding-left:21px;margin:18px 0 24px}.web-service-card__body li{margin:7px 0}.service-badge{display:inline-block;padding:7px 12px;border-radius:999px;background:#168cf0;color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.04em}.service-badge--soon{background:#f5b82e;color:#071b3b}.btn--muted{background:#e8edf4;color:#68768a;cursor:default}@media(max-width:800px){.web-service-grid{grid-template-columns:1fr}.web-service-card__body{padding:4px 22px 26px}}
+</style><style id="homepage-icon-scale-fix">
+/* Keep homepage artwork contained instead of inheriting oversized image dimensions. */
+.benefit__icon{width:68px!important;height:68px!important;flex:0 0 68px!important}
+.benefit__icon img,.benefit__icon svg{max-width:56px!important;max-height:56px!important;width:56px!important;height:56px!important;object-fit:contain}
+.flow-visual{width:96px!important;height:96px!important}
+.flow-visual img{max-width:82px!important;max-height:82px!important;width:82px!important;height:82px!important;object-fit:contain}
+.flow-stage--engine .flow-visual{width:108px!important;height:108px!important}
+.flow-stage--engine .flow-visual img{max-width:94px!important;max-height:94px!important;width:94px!important;height:94px!important}
+.flow-visual--money{width:118px!important;height:118px!important}
+.flow-visual--money>img{max-width:118px!important;max-height:118px!important;width:118px!important;height:118px!important;object-fit:cover}
+.plan-icon{width:72px!important;height:72px!important}
+.plan-icon img,.plan-icon svg{max-width:58px!important;max-height:58px!important;width:58px!important;height:58px!important;object-fit:contain}
+.plan-icon--ai{width:104px!important;height:104px!important}
+.plan-icon--ai img{max-width:92px!important;max-height:92px!important;width:92px!important;height:92px!important}
+.plan-icon--bundle{width:112px!important;height:112px!important}
+.plan-icon--bundle img{max-width:82px!important;max-height:82px!important;width:82px!important;height:82px!important}
+.plan-icon--bundle .bundle-pin{width:68px!important;height:68px!important}
+.plan-icon--bundle .bundle-pin svg{max-width:64px!important;max-height:64px!important;width:64px!important;height:64px!important}
+.review-map-icon{width:112px!important;height:96px!important}
+.review-map-icon>img{max-width:64px!important;max-height:64px!important;width:64px!important;height:64px!important}
+.review-map-icon>svg{max-width:68px!important;max-height:68px!important;width:68px!important;height:68px!important}
+.web-service-card__image{width:min(100%,340px)!important;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;margin:18px auto 4px!important;padding:0!important}
+@media(max-width:600px){.web-service-card__image{width:min(88%,290px)!important}.flow-visual--money{width:106px!important;height:106px!important}.flow-visual--money>img{width:106px!important;height:106px!important}}
 </style></head><body>
 <header class="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo"><img src="assets/images/automate-logo-light.svg?v=20260922-whiteheader2" alt="Automate"></a><button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button><nav class="nav__links"><a href="index.html">Home</a><a href="index.html#how">Solutions</a><a href="index.html#plans">Pricing</a><a href="contact.html">Contact</a><a href="contact.html" class="btn btn--primary nav__cta">Get Started</a></nav></div></header>
 <section class="hero hero--artwork"><div class="hero-artwork"><img src="assets/images/hero-automation.png?v=20260922-cropfix3" alt="AI phone automation showing an incoming call, AI answering, lead capture, follow-up and review request"><a class="hero-hotspot hero-hotspot--start" href="#plans" aria-label="Get Started Today"></a><a class="hero-hotspot hero-hotspot--demo" href="#how" aria-label="See How It Works"></a></div></section>
