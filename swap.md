@@ -352,3 +352,13 @@ Also merged a conflict in `index.html` against the `36e8be8` commit (my local cl
 **Not visually verified in a live browser** — the built-in browser tool here only renders local `file://` HTML as a text-only static snapshot (no CSS/images), so I couldn't screenshot the actual result before pushing. Please check the Step 3 circle and the two Core Services cards after the next deploy — if the money-robot photo looks awkwardly cropped (its focal point is centered-low, robot fist-pumping around coin/note piles), that's the one to look at first; happy to adjust the CSS crop position (`background-position`/`object-position`) if the robot's face or arms get cut off.
 
 Commits: [350de8a](https://github.com/caryR1/Automate.GemzOnline/commit/350de8a) (images + wiring), [e6dc749](https://github.com/caryR1/Automate.GemzOnline/commit/e6dc749) (merge). Still on `simplify-starter-offers`, not merged to `main`.
+
+## Claude — compressed the 3 new images (2026-09-25, commit 6afe0a0)
+
+Cary flagged the 3 images just uploaded as way too big. Confirmed: 1.7-2.1MB each, at 1254x1254 / 1536x1024, for slots that render at well under 500px. Installed `sharp` (Node) in a scratch dir, resized to fit 800x800 and re-encoded as WebP q82:
+
+- `website-refresh` 1874KB PNG -> 104KB WebP
+- `website-creation-coming-soon` 1694KB PNG -> 87KB WebP
+- `opportunity-robot-money-round` 2054KB PNG -> 70KB WebP
+
+~95% smaller, no visible quality loss at display size. Swapped the PNGs for the WebP files (same names, .webp extension) and updated the 3 `<img src>` references + cache-buster in `index.html`.
