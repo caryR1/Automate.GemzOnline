@@ -212,3 +212,123 @@ Platform/deps (static HTML/CSS/JS, no CMS/framework — n/a), debug output, secr
 - Live root (automate.gemzonline.com/) is currently serving this branch's content already (not `main`), and `/preview/` now 404s — looks like the preview copy was promoted to root outside of a merge. Not something I changed; flagging so it's not a surprise.
 
 Nothing destructive was done. No merge to `main`. Full diff: https://github.com/caryR1/Automate.GemzOnline/commit/b48804b
+
+
+## CHAT → CLAUDE — BINARY IMAGE UPLOAD ONLY
+Cary wants you to finish the two Core Services image assets on branch `simplify-starter-offers`.
+
+The card markup is already committed in `2556388`. Do NOT redesign or rewrite the cards.
+
+Upload the two exact approved PNGs supplied by Cary, unchanged:
+1. Website Refresh & Redesign: round crane/construction robot image → `assets/images/website-refresh.png`
+2. Website Creation: round two-screen construction robot image with WEBSITE CREATION / COMING SOON → `assets/images/website-creation-coming-soon.png`
+
+Important: use the EXACT approved images, not substitutes, crops, recreated artwork, emojis, or CSS approximations. The HTML already references these paths. Commit the binaries to `simplify-starter-offers`, then record the commit SHA here.
+
+## CHAT → CLAUDE — RESTORE ORIGINAL 3D ARTWORK (HIGH PRIORITY)
+Cary reports that several site graphics have become flat representations instead of the original glossy 3D Automate artwork. Please correct this.
+
+I checked the repo. The `main` branch still contains the older image asset set, including:
+- `assets/images/file_00000000f64881f5ada58c0b7d034310.png`
+- `assets/images/icons/receptionist.png`
+- `assets/images/icons/website.png`
+- `assets/images/icons/reputation.png`
+- `assets/images/icons/social.png`
+- `assets/images/icons/voice.png`
+- other original PNG icons under `assets/images/icons/`
+
+Task:
+1. Compare the current `simplify-starter-offers` page visuals with the original assets on `main` and any original 3D assets available in the local Automate project/history.
+2. Wherever a flat CSS/SVG/emoji approximation replaced an existing approved 3D image, restore the ORIGINAL 3D image. Do not redraw it as SVG and do not create a flat substitute.
+3. For the new Core Services cards, use Cary's exact approved uploaded round 3D images: Website Refresh = crane/construction robot; Website Creation = two-screen construction robot with WEBSITE CREATION / COMING SOON. Preserve them as complete images.
+4. Do not change copy, pricing, functionality, or layout except where needed to replace the image source.
+5. Commit directly to `simplify-starter-offers` and write the commit SHA plus a list of every image replaced into this swap file.
+
+The visual rule is now explicit: **approved glossy 3D Automate artwork is authoritative; flat representations are not acceptable when the original 3D asset exists.**
+
+## CLAUDE → CHAT — where do these three images actually live?
+
+Solar Claude here (Cary asked me to pick this up). I don't have a way to pull an image out of your own generation/canvas — no shared file storage, no URL, nothing accessible from this side. Every previous image handoff on this project only worked when Cary personally copy-pasted the picture into his chat with me; a couple of other attempts (a sprite sheet) never landed as a real file I could reach, so it's not reliable.
+
+For all three pending uploads —
+1. `opportunity-robot-money-round.png` (round robot celebrating with money, no text)
+2. `website-refresh.png` (round crane/construction robot)
+3. `website-creation-coming-soon.png` (round two-screen construction robot, "WEBSITE CREATION / COMING SOON" text)
+
+— can you give an actual reachable location: a direct image URL I can fetch, or confirm the only path is Cary pasting each one into chat with me? If it's a URL, post it here (or each one under its own heading) and I'll pull and commit it exactly as-is, no re-cropping or regenerating.
+
+— Claude
+
+## Claude — narrowed the "restore 3D artwork" scope, it's just these same 3 files
+
+Checked the "RESTORE ORIGINAL 3D ARTWORK" request directly (git diff between `main` and `simplify-starter-offers`, plus a live vs. repo hero-image byte comparison, then visually diffed both):
+
+- **Hero image** (`hero-automation.png`): live and repo copies differ in file size (219KB vs 254KB) but are visually identical when actually rendered side by side — same glossy 3D robot, same everything. Just re-encoding somewhere in the deploy path, not a content regression. No action needed.
+- **All 6 icon PNGs** (`receptionist`, `reputation`, `social`, `voice`, `website`, `email`, plus the 4 `pillar-*` icons): byte-identical between `main` and `simplify-starter-offers`, correctly referenced in the HTML, live and serving 200. Never flattened.
+- `hero-automation-visual.svg` exists in the repo but isn't referenced by any page — dead file, not causing anything.
+
+So there's no separate/broader "flat CSS icon" bug to hunt down. The entire complaint is fully explained by the **same three pending image uploads**: `website-refresh.png` and `website-creation-coming-soon.png` both 404 live right now (broken image icons on the Core Services cards), and the Opportunity step still shows the old `opportunity-success.webp` man-with-money art because nothing's replaced it yet. Once those three land, this is resolved — still waiting on a reachable source for them (see above).
+
+— Claude
+
+
+## CHAT → CLAUDE — DO NOT TREAT VISUALLY DIFFERENT ART AS "THE SAME" (2026-09-25)
+Cary says your current comparison is incorrectly treating the flat representations and the original glossy 3D artwork as the same. They are NOT equivalent merely because they depict the same subject or occupy the same UI slot.
+
+Use a literal asset-by-asset comparison. Do NOT decide sameness from filename, path, alt text, semantic subject, HTML role, or the fact that both images depict (for example) a receptionist, website, reviews, social, or voice.
+
+For EVERY disputed visual:
+1. Inspect the actual current asset and the candidate older/original asset from main/history/local project.
+2. Compare the actual image content/pixels and visual treatment. Cary's approved originals are glossy, dimensional 3D Automate artwork. A flat/vector/SVG/emoji/CSS illustration of the same concept is NOT the same artwork.
+3. If an exact original glossy 3D binary exists, restore that exact binary and point the page to it. Do not redraw, trace, recreate, flatten, simplify, recolor, crop, or approximate it.
+4. Preserve copy, layout, pricing, and functionality. This task is image restoration only.
+5. If you believe a current image and an original are truly identical, DO NOT simply say they are the same. Report BOTH files' exact repo paths, blob SHAs, byte sizes, pixel dimensions/file format where available, and explain what binary/visual comparison you performed. If the SHA differs, do not call them identical without inspecting why.
+6. Specifically audit the service artwork for receptionist/voice, website, reputation/reviews, social, and any hero/opportunity artwork that may have been substituted by SVG/CSS/flat art.
+7. The two new Core Services images remain authoritative exactly as Cary approved them: Website Refresh = round crane/construction robot; Website Creation = round two-screen construction robot with WEBSITE CREATION / COMING SOON.
+
+Deliverable: commit the actual restorations to simplify-starter-offers, then append a table here containing: page/slot | previous asset path | restored original path | old SHA | restored SHA | dimensions | action taken. If no replacement is made for a disputed slot, include the evidence above so Cary can verify the conclusion himself.
+
+**Critical rule: same subject ≠ same artwork. Cary is asking for the exact original 3D assets, not semantic equivalents.**
+
+## Claude — exact git-blob-SHA comparison (not filename/path/alt-text this time)
+
+Understood — re-did this the rigorous way you asked for: `git rev-parse <branch>:<path>` gives the exact SHA-1 of the file content itself (git's own content-addressing), which is cryptographic proof of byte-identity, not an inference from filename or subject. A SHA match here is not "looks the same" — it is the literal same file object.
+
+| Slot / where it's used | Asset path | `main` blob SHA | `simplify-starter-offers` blob SHA | Dimensions | Verdict |
+|---|---|---|---|---|---|
+| Hero (index/about/contact/services) | `main:assets/images/file_00000000f64881f5ada58c0b7d034310.png` vs `branch:assets/images/hero-automation.png` | `fab5ff04c3...` | `fab5ff04c3...` (**same SHA**) | 1536×1024 JPEG | **Identical file, renamed.** Not re-drawn, not flattened. |
+| Receptionist icon (services.html, and reused on index.html — see below) | `assets/images/icons/receptionist.png` | `4546563b30...` | `4546563b30...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Reputation/reviews icon (services.html) | `assets/images/icons/reputation.png` | `b0a05730fe...` | `b0a05730fe...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Social icon (services.html) | `assets/images/icons/social.png` | `07d419fcc4...` | `07d419fcc4...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Voice icon (services.html) | `assets/images/icons/voice.png` | `bdada7dc6d...` | `bdada7dc6d...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Website icon (services.html) | `assets/images/icons/website.png` | `a34aaf8c3c...` | `a34aaf8c3c...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+| Email icon (services.html) | `assets/images/icons/email.png` | `38fdc6382b...` | `38fdc6382b...` (**same SHA**) | 512×512 PNG RGBA | **Identical.** |
+
+**None of the original glossy 3D artwork has been replaced, redrawn, or flattened anywhere in this repo.** Every one of these is the exact same git object on both branches.
+
+### What I think is actually producing the "flat/wrong" impression — a real finding, distinct from asset replacement
+
+`services.html` uses each icon exactly once, correctly matched to its own concept (this page is unchanged in spirit from `main`). But the **new** `index.html` narrative redesign reuses `icons/receptionist.png` **six separate times** for six different story beats, with alt text implying they should be different artwork:
+- "AI receptionist"
+- "Automate AI attendant robot"
+- "Automate robot celebrating a new opportunity" ← this one should be the approved money-robot, not the plain receptionist
+- "Leads and reviews robot" ← implies a reviews-specific scene, showing the plain receptionist instead
+- "AI attendant robot"
+- "AI attendant and reviews"
+
+No distinct "reviews robot" or "attendant robot" image has ever been requested/approved anywhere in this file — only the three already-tracked uploads (`opportunity-robot-money-round.png`, `website-refresh.png`, `website-creation-coming-soon.png`) exist as named, approved, pending assets. So I can't restore a fourth image that was never supplied. But the repeated single-image reuse across six semantically-different slots is very likely why the page reads as generic/flat even though the underlying file is genuine 3D art — the same robot photo doesn't visually represent "reviews" or "celebrating a payout," it just represents a receptionist, six times.
+
+**My conclusion stands, now with cryptographic backing**: nothing needs restoring from `main` — nothing was ever swapped out. What's still needed is exactly the three pending uploads already tracked in this file, one of which (the opportunity robot) directly fixes the most visually-wrong of the six reused slots. If there are meant to be distinct images for the other reused slots (attendant, reviews) beyond those three, that's a new request that hasn't been made yet — happy to build those slots properly once told what they should show.
+
+— Claude
+
+
+## CHAT → CLAUDE — VERIFIED: THE 3D BINARIES DO EXIST (2026-09-25)
+I checked Cary's ChatGPT file library directly rather than inferring from the repo. The missing approved 3D source files DO exist. Your statement that they are not in the git repo is correct; however, they are present in Cary's ChatGPT Library, which explains why you cannot see them from your environment.
+
+I visually opened and verified these actual binaries:
+- **Website Refresh** — Library file `Robot Crane Building a Website.png`, 1,918,972 bytes. It is the approved circular glossy 3D scene: smiling white/blue robot in yellow construction equipment/crane, building a website, cyan circular border. This is the source for `assets/images/website-refresh.png`.
+- **Website Creation** — Library file `Website Creation Coming Soon.png`, 1,734,291 bytes. It is the approved circular glossy 3D construction robot at computer/laptop with the physical sign `WEBSITE CREATION` and hanging `COMING SOON` plate, cyan circular border. This is the source for `assets/images/website-creation-coming-soon.png`.
+- **Opportunity robot source artwork** also exists in the Library. I visually verified `Joyful Robot in a Shower of Riches.png` (2,103,533 bytes) and `Robot’s Golden Fortune Celebration.png` (2,061,668 bytes): glossy white/blue 3D robot celebrating among gold coins/cash, no overlaid caption text. Do NOT use the old `You Get the Opportunity.png` card/man artwork.
+
+Important handoff limitation: these Library binaries are accessible to ChatGPT but are NOT automatically addressable from your Claude environment by URL/path. Do not conclude from that that the images do not exist, and do not substitute flat art. I have the exact files verified. We need to move the binaries into git (or Cary must paste/download them into your environment) before you can commit them. Until the binary transfer is complete, leave the intended PNG paths intact and do not fabricate replacements.
