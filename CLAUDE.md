@@ -13,6 +13,15 @@ session; coordinate through Cary or the repos): **Solar** (solar-referral +
 the shared affiliate plugin), **Tiny homes** (homes.gemzonline.com), **Travel
 Gemz / Elegant** (travel.gemzonline.com, eleganthomefinishings.com).
 
+## Workstreams (priority order set by Cary, 2026-09-26)
+
+1. **Pricing model & business policies** — finish the pricing model, then write
+   down how the business operates (payment terms, revisions, etc.).
+2. **Au-Some Notarific (Melicia, first client)** — her requested site changes
+   take priority over Automate's own site. Repo `caryR1/Au-some`.
+3. **Automate as a going concern** — proper sales funnels for automate.gemzonline.com
+   and the GHL plans (Leads & Reviews / AI Attendant / Complete).
+
 ## Pricing — read `PRICING.md` before quoting anything
 
 `PRICING.md` holds Cary's finalized pricing model (2026-09-26) and the
