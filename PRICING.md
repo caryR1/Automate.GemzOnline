@@ -46,6 +46,24 @@ Never re-research an item that already has a row; quote from it.
 
 Plus the one-time $100 setup fee (item 1) on each.
 
+## Business policies
+
+Decided with Cary 2026-09-26 (first batch — see Open items for what's still undecided):
+
+1. **Payment terms:** deposit + milestone payments. For multi-section builds,
+   split into thirds — e.g. 1/3 up front before work starts, 1/3 at the
+   midpoint/draft review, 1/3 on completion before final files/credentials are
+   handed over. For a small single-section job, collapse to deposit + final.
+   Exact milestone split can flex per project size; the principle (never 100%
+   up front, never 100% on delivery) is fixed.
+2. **Revisions:** **2 rounds included per section**, then **$25/hr** (the
+   consultation rate) for anything beyond that.
+3. **Friends-and-family discount:** standard **40% off**. (Melicia's actual
+   discount was ~43%, treated as a one-off close to the new standard rate
+   rather than the rate itself.)
+4. **First consultation:** **$25**, credited toward the project if the client
+   goes ahead. Not free, not a sunk cost for a committed client.
+
 ## Rate sheet — market comparison (client-facing positioning tool)
 
 Add every newly priced item as a new row. Columns: low end is budget/overseas
@@ -73,3 +91,15 @@ rock-bottom global-freelancer rates — the accessible-but-not-cheapest middle.
    next real custom request is the first test of interview → research → add row.
 2. Reflect the finalized model in the Automate site copy and GHL checkout setup
    where relevant (e.g. the $100 setup fee isn't shown on the site yet).
+
+Still-undecided gaps (from HANDOFF.md's original list — first 4 resolved above,
+2026-09-26):
+3. Hosting/domain and ongoing maintenance — who pays, is there a monthly care plan?
+4. Who supplies content — does the client provide text/photos, or is copywriting
+   a separate priced add-on per section?
+5. Adding a single new section to an *existing* site — new-build rate ($100) or
+   refresh rate ($60)?
+6. Minimum project size, and a rush-fee policy for expedited turnaround.
+7. GHL plans: contract term, cancellation terms, setup fee waived for annual
+   commitment? (Lower priority right now — no active GHL account.)
+8. Local SEO / Google Business Profile setup as a priced add-on.
