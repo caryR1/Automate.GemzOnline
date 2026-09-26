@@ -34,7 +34,18 @@ Never re-research an item that already has a row; quote from it.
    pricing tool — each significant section on it is a direct priced line item.
 9. **Pilot case — Au-Some Notarific (Melicia's site, au-somenotarific.com,
    repo caryR1/Au-some):** 7 sections × $100 = $700 standard, discounted to
-   **$400 flat** (friends-and-family). Her actual final price.
+   **$400 flat** (friends-and-family). Her actual final price. Confirmed
+   2026-09-26: the $400 flat **covers everything delivered**, not just the 7
+   sections — add-ons beyond the core build (3 blog articles, 3 service
+   illustrations, portrait cutout, coastal background, social-share image;
+   $360–510 at standard rates) were absorbed into this one-off pilot price.
+   Full breakdown: `Melicia/Au-Some-Pricing-Breakdown.pdf`. **This is a
+   one-off pilot deal — it does not set a precedent that add-ons are free or
+   bundled on future projects; those are billed per item 6/7 above.**
+10. **Contact form (PHP mail, pop-ups/retry, no database, no third-party
+    integration): static tier**, not custom-coded. Counts within its section's
+    section fee (e.g. the "Contact" section), doesn't need separate pricing —
+    even though it has server-side mail logic. Precedent for future sites.
 
 ## Automate's own recurring plans (live on automate.gemzonline.com, `index.html#plans`)
 
@@ -63,6 +74,13 @@ Decided with Cary 2026-09-26 (first batch — see Open items for what's still un
    rather than the rate itself.)
 4. **First consultation:** **$25**, credited toward the project if the client
    goes ahead. Not free, not a sunk cost for a committed client.
+5. **Hosting/domain & maintenance:** the client pays their own hosting and
+   domain. An ongoing maintenance/care plan is offered as an **optional paid
+   upsell** — no standard monthly price set yet (add one when the first real
+   care-plan client comes up, via the standing rule).
+6. **Minor fixes vs. billable revisions:** a data-entry/typo correction (e.g.
+   a wrong phone number) is not a design revision round and isn't counted
+   against the client's included-revisions allowance — just fix it.
 
 ## Rate sheet — market comparison (client-facing positioning tool)
 
@@ -92,14 +110,17 @@ rock-bottom global-freelancer rates — the accessible-but-not-cheapest middle.
 2. Reflect the finalized model in the Automate site copy and GHL checkout setup
    where relevant (e.g. the $100 setup fee isn't shown on the site yet).
 
-Still-undecided gaps (from HANDOFF.md's original list — first 4 resolved above,
-2026-09-26):
-3. Hosting/domain and ongoing maintenance — who pays, is there a monthly care plan?
-4. Who supplies content — does the client provide text/photos, or is copywriting
+Still-undecided gaps (from HANDOFF.md's original list — items 1–6 resolved
+above across two rounds, 2026-09-26):
+3. Who supplies content — does the client provide text/photos, or is copywriting
    a separate priced add-on per section?
-5. Adding a single new section to an *existing* site — new-build rate ($100) or
+4. Adding a single new section to an *existing* site — new-build rate ($100) or
    refresh rate ($60)?
-6. Minimum project size, and a rush-fee policy for expedited turnaround.
-7. GHL plans: contract term, cancellation terms, setup fee waived for annual
+5. Minimum project size, and a rush-fee policy for expedited turnaround.
+6. GHL plans: contract term, cancellation terms, setup fee waived for annual
    commitment? (Lower priority right now — no active GHL account.)
-8. Local SEO / Google Business Profile setup as a priced add-on.
+7. Local SEO / Google Business Profile setup as a priced add-on.
+8. Not priced by the model at all yet (flagged by Mel Au-Some, from the
+   Au-Some pilot): security-hardening work (`.htaccess`, `send.php` fixes),
+   general speed/SEO implementation work, and consultation-hour tracking
+   (Melicia's consultation time was never logged).
