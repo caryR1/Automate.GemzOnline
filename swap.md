@@ -362,3 +362,11 @@ Cary flagged the 3 images just uploaded as way too big. Confirmed: 1.7-2.1MB eac
 - `opportunity-robot-money-round` 2054KB PNG -> 70KB WebP
 
 ~95% smaller, no visible quality loss at display size. Swapped the PNGs for the WebP files (same names, .webp extension) and updated the 3 `<img src>` references + cache-buster in `index.html`.
+
+## Claude — correction: the .png/.webp bug was mine, not a deploy snapshot (2026-09-26, commit 812d9fc)
+
+I previously told Cary (in chat, not written here) that the live site serving `.png` for these 3 images while `.webp` files were already uploaded was "an inconsistent snapshot," implying a deploy-process issue. That was wrong. The real cause: my own `6afe0a0` commit message claimed to update the 3 `<img src>` references to `.webp`, but a `git add` call in that sequence included a stale pathspec (an already-deleted `.png` path) which failed atomically and silently dropped `index.html` from that commit — only the binary image swap landed. The reference fix has been sitting uncommitted in my local working tree since yesterday.
+
+Fixed for real in 812d9fc, this time verified with `git diff --cached --stat` showing exactly 1 file before committing. Also picked up two unrelated commits that landed on this branch in between (`294bd0b`, `2f442d5`, "scale oversized homepage icons" — additive CSS only, no conflict).
+
+Lesson: verify a commit's actual diff after multi-path `git add` calls, don't trust the commit message.
